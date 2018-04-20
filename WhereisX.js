@@ -16,10 +16,11 @@
          dataType: 'json',
          success: function( geoData ) {
          // Got the data - parse it and return the temperature
-         console.log(geoData['results'][0]['geometry']['location']['lng']);
-         callback(geoData);
+         var lng = geoData['results'][0]['geometry']['location']['lng'];
+         callback(lng);
+         }
          });
-    }
+    };
 
     // Block and block menu descriptions
     var descriptor = {
