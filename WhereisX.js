@@ -30,5 +30,5 @@
     };
 
     // Register the extension
-    ScratchExtensions.register('Where is?', "A simple extension that reports latitude and longitude of an address.", ext);
+    ScratchExtensions.register('Where is?', "A simple extension that reports latitude and longitude of an address.", descriptor, ext);
 })({});
