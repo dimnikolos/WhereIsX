@@ -21,15 +21,14 @@
         return(locationJson);
 
     };
-    ext.longitudeOf = function(location){
-        return(fecthLocation(location));
+    ext.longitudeOf = function(location,callback){
+        callback(fecthLocation(location));
     }
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['r', '%s', 'latitudeOf ', 'New York, NY'],
-            ['r', '%s', 'longitudeOf', 'New York, NY']
+            ['R', 'longitudeOf %s', longitudeOf, 'New York, NY']
         ]
     };
 
