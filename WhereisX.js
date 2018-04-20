@@ -26,7 +26,6 @@
     }
 
     }
-    }
 
     // Block and block menu descriptions
     var descriptor = {
