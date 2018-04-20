@@ -28,7 +28,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'longitudeOf %s', longitudeOf, 'New York, NY']
+            ['R', 'longitudeOf %s', 'longitudeOf', 'New York, NY']
         ]
     };
 
