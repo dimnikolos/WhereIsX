@@ -10,19 +10,15 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    function fetchLocation(location){
-        url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location 
-        + '&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU';
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url, false);
-        xhr.send();
-        var locationJson = xhr.responseJSON;
-        console.log(locationJson);
-        return(locationJson);
-
-    };
     ext.longitudeOf = function(location,callback){
-        callback(fetchLocation(location));
+        $.ajax({
+         url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU',
+         dataType: 'json',
+         success: function( geoData ) {
+         // Got the data - parse it and return the temperature
+         console.log(geoData['results'][0]['geometry']['location']['lng']);
+         callback(geoData);
+         });
     }
 
     // Block and block menu descriptions
