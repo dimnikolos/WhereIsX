@@ -22,7 +22,7 @@
 
     };
     ext.longitudeOf = function(location,callback){
-        callback(fecthLocation(location));
+        callback(fetchLocation(location));
     }
 
     // Block and block menu descriptions
