@@ -1,5 +1,4 @@
 //https://maps.googleapis.com/maps/api/geocode/json?address=Arta,%20Greece&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU
-
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
@@ -11,7 +10,7 @@
     };
 
     ext.longitudeOf = function(location,callback){
-        $.ajax({
+      $.ajax({
          url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU',
          dataType: 'json',
          success: function( geoData ) {
@@ -22,13 +21,14 @@
          });
     };
 
+
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'longitudeOf %s', 'longitudeOf', 'New York, NY']
+            ['R', 'longitude of %s', 'longitudeOf', 'New York, NY'],
         ]
     };
 
     // Register the extension
-    ScratchExtensions.register('Where is?', "A simple extension that reports latitude and longitude of an address.", descriptor, ext);
+    ScratchExtensions.register('Where is X', descriptor, ext);
 })({});
