@@ -15,6 +15,7 @@
          dataType: 'json',
          success: function( geoData ) {
          // Got the data - parse it and return the temperature
+         console.log(geoData);
          var lat = geoData['results'][0]['geometry']['location']['lat'];
          callback(lat);
          }
