@@ -1,6 +1,6 @@
 //https://maps.googleapis.com/maps/api/geocode/json?address=Arta,%20Greece&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU
 (function(ext) {
-      var cacheDuration = 1800000 //ms, 30 minutes
+      var cacheDuration = 1800000; //ms, 30 minutes
       var cachedWhere = {};    
       class whereData{
           constructor(lng,lat,form){
@@ -21,6 +21,7 @@
 
     ext.longitudeOf = function(location,callback){
         //if in cache
+        console.log(cachedWhere);
         if (location in cachedWhere &&
             Date.now() - cachedWhere[location].time < cacheDuration) {
           //Weather data is cached
