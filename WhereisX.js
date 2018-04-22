@@ -7,6 +7,7 @@
               this.lng = lng;
               this.lat = lat;
               this.form = form;
+              this.time = Date.now();
           };
       };
     // Cleanup function when the extension is unloaded
