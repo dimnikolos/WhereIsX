@@ -9,6 +9,18 @@
         return {status: 2, msg: 'Ready'};
     };
 
+    ext.latitudeOf = function(location,callback){
+      $.ajax({
+         url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU',
+         dataType: 'json',
+         success: function( geoData ) {
+         // Got the data - parse it and return the temperature
+         var lat = geoData['results'][0]['geometry']['location']['lat'];
+         callback(lat);
+         }
+         });
+    };
+
     ext.longitudeOf = function(location,callback){
       $.ajax({
          url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU',
@@ -25,7 +37,8 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'longitude of %s', 'longitudeOf', 'New York, NY'],
+            ['R', 'longitude of %s', 'longitudeOf', 'Athens, Greece'],
+            ['R', 'latitude of %s', 'latitudeOf', 'Athens, Greece'],
         ]
     };
 
