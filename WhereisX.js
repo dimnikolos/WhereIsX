@@ -35,7 +35,7 @@
          var lng = geoData['results'][0]['geometry']['location']['lng'];
          var lat = geoData['results'][0]['geometry']['location']['lat'];
          var form = geoData['results'][0]['formatted_address'];
-         cachedWhere[location] = whereData(lng,lat,form);
+         cachedWhere[location] = new whereData(lng,lat,form);
          callback(lng);
          }
          });
@@ -57,7 +57,7 @@
          var lng = geoData['results'][0]['geometry']['location']['lng'];
          var lat = geoData['results'][0]['geometry']['location']['lat'];
          var form = geoData['results'][0]['formatted_address'];
-         cachedWhere[location] = whereData(lng,lat,form);
+         cachedWhere[location] = new whereData(lng,lat,form);
          callback(lat);
          }
          });
@@ -78,7 +78,7 @@
          var lng = geoData['results'][0]['geometry']['location']['lng'];
          var lat = geoData['results'][0]['geometry']['location']['lat'];
          var form = geoData['results'][0]['formatted_address'];
-         cachedWhere[location] = whereData(lng,lat,form);
+         cachedWhere[location] = new whereData(lng,lat,form);
          callback(form);
          }
          });
