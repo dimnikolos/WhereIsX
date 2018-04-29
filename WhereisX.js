@@ -69,7 +69,7 @@
         if (location in cachedWhere &&
             Date.now() - cachedWhere[location].time < cacheDuration) {
           //Weather data is cached
-          callback(cachedWhere[location].lat);
+          callback(cachedWhere[location].form);
           return;
         }        
       $.ajax({
