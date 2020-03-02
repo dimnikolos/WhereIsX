@@ -35,6 +35,7 @@
          url: urlforCall,
          dataType: 'json',
          success: function( geoData ) {
+         console.log(geoData);
          // Got the data - parse it and return the temperature
          var lng = geoData['results']['item']['position']['lon'];
          var lat = geoData['results']['item']['position']['lat'];
