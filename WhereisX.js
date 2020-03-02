@@ -37,9 +37,9 @@
          success: function( geoData ) {
          console.log(geoData);
          // Got the data - parse it and return the temperature
-         var lng = geoData['results']['item']['position']['lon'];
-         var lat = geoData['results']['item']['position']['lat'];
-         var form = geoData['results']['item']['address']['freeformAddress'];
+         var lng = geoData['results'][0]['position']['lon'];
+         var lat = geoData['results'][0]['position']['lat'];
+         var form = geoData['results'][0]['address']['freeformAddress'];
          cachedWhere[location] = new whereData(lng,lat,form);
          callback(lng);
          }
