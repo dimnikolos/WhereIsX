@@ -29,14 +29,16 @@
           callback(cachedWhere[location].lng);
           return;
         }
+        urlforCall = 'https://api.tomtom.com/search/2/geocode/athens%20georgia.xml?key=vzYGDlzQsODP8CIg6cbtQD8bK8hCGhhT' +
+        encodeURIComponent(location) + '.json?key=vzYGDlzQsODP8CIg6cbtQD8bK8hCGhhT';
       $.ajax({
-         url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+location+'&key=AIzaSyBX9t97s78v5FrCMpnuwZZWYT2vcpf6POU',
+         url: urlforCall,
          dataType: 'json',
          success: function( geoData ) {
          // Got the data - parse it and return the temperature
-         var lng = geoData['results'][0]['geometry']['location']['lng'];
-         var lat = geoData['results'][0]['geometry']['location']['lat'];
-         var form = geoData['results'][0]['formatted_address'];
+         var lng = geoData['results']['item']['position']['lon'];
+         var lat = geoData['results']['item']['position']['lat'];
+         var form = geoData['results']['item']['address']['freeformAddress'];
          cachedWhere[location] = new whereData(lng,lat,form);
          callback(lng);
          }
