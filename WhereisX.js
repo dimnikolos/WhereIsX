@@ -29,7 +29,7 @@
           callback(cachedWhere[location].lng);
           return;
         }
-        urlforCall = 'https://api.tomtom.com/search/2/geocode/athens%20georgia.xml?key=vzYGDlzQsODP8CIg6cbtQD8bK8hCGhhT' +
+        urlforCall = 'https://api.tomtom.com/search/2/geocode/' + 
         encodeURIComponent(location) + '.json?key=vzYGDlzQsODP8CIg6cbtQD8bK8hCGhhT';
       $.ajax({
          url: urlforCall,
